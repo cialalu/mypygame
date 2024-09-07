@@ -72,14 +72,11 @@ def move_right():
     if player.xcor() < 290:
         player.setx(player.xcor() + 40)  
 
-
 player = create_shape()
-
 
 screen.listen()
 screen.onkey(move_left, "Left")
 screen.onkey(move_right, "Right")
-
 
 placed_shapes = []
 
@@ -88,7 +85,6 @@ def check_for_match():
     if len(placed_shapes) < 3:
         return
 
-    
     grid = {}
     for shape in placed_shapes:
         x = int(shape.xcor() // 40) * 40  
@@ -139,7 +135,6 @@ def check_for_match():
         shape.hideturtle()
         placed_shapes.remove(shape)
 
-
 def apply_gravity():
     y = player.ycor() + player.dy
     collision = False
@@ -176,7 +171,6 @@ def check_for_loss():
         if shape.ycor() > 200: 
             show_game_over()
             screen.bye()
-
 
 def game_loop():
     apply_gravity()
